@@ -5,7 +5,7 @@ Welcome to the Tic-Tac-Toe Game project! This simple web-based game allows two p
 ## Table of Contents
 - [Game Overview](#game-overview)
 - [How to Play](#how-to-play)
-- [Code Structure](#code-structure)
+- [Code Structure](#tic-tac-toe-game-logic-explanation)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 
@@ -31,19 +31,25 @@ Tic-Tac-Toe is a classic two-player game where the objective is to get three of 
 
 6. **Restarting the Game**: After a game ends (either in a win or a tie), you can click the "New Game" button to start a new game.
 
-## Code Structure
+## Tic-Tac-Toe Game Logic Explanation
 
-The JavaScript code for this project is organized into functions and follows a modular structure. Here's an overview of the key components:
+This Tic-Tac-Toe game is implemented using HTML, CSS, and JavaScript, designed for two players to take turns placing "X" and "O" marks on a 3x3 grid. The game logic can be broken down as follows:
 
-- `initGame()`: Initializes the game, resets the grid, and sets the starting player.
+1. **Initialization**: The game starts with "X" as the starting player. A `gameGrid` array represents the grid state, and `winningPositions` defines possible winning combinations.
 
-- `checkGameOver()`: Checks if the game has been won by a player or ended in a tie.
+2. **Game Initialization**: `initGame()` resets the game by setting player "X," clearing the grid, enabling cell interactions, and removing winning class.
 
-- `swapTurn()`: Switches the current player's turn between X and O.
+3. **Checking for a Winner**: `checkGameOver()` checks for a winner by iterating through `winningPositions`. If a winning combo matches the grid, it displays the winner or a tie.
 
-- `handleClick(index)`: Handles player clicks on the grid, updates the game grid, and checks for a win or tie.
+4. **Swapping Turns**: `swapTurn()` switches the current player between "X" and "O" and updates the game info.
 
-- Event Listeners: Attach event listeners to the game board squares and the "New Game" button to trigger the game logic.
+5. **Handling Clicks**: Event listeners on cells call `handleClick(index)`, which updates the grid, disables clicks, swaps turns, and checks for a winner.
+
+6. **New Game Button**: The "New Game" button resets the game with `initGame()`.
+
+The code also features CSS classes to visually highlight the winning cells and disable further interaction with the grid after a win or tie. The game provides a clear interface with informative messages about the current player and the game's outcome.
+
+This project offers a user-friendly and visually appealing implementation of the classic Tic-Tac-Toe game suitable for web applications or standalone use.
 
 ## Getting Started
 
